@@ -41,6 +41,21 @@ def plot_dist_box_qq(df: pd.DataFrame):
 
         plt.show()
 
+
+def null_values_heatmap(df: pd.DataFrame, size=(15, 10)):
+
+    """
+    Function that plots all columns with null values as a heatmap
+    params: df = pandas dataframe to plot
+            size(OPTIONAL) = Size of heatmap
+    """
+    plt.figure(figsize=size)
+    sns.heatmap(df.isnull(),
+            yticklabels=False,
+            cbar=False,
+            cmap='viridis')
+    plt.show()
+
 if __name__ == "__main__":
 
     X = np.random.normal(loc=0, scale=1, size=1000)
